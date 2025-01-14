@@ -1,14 +1,16 @@
 package io.steviemul.stiffed.diff;
 
-import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 
-@RequiredArgsConstructor
 public class Diff<T extends Comparable<T>> {
 
   private final List<T> left;
   private final List<T> right;
+
+  public Diff(List<T> left, List<T> right) {
+    this.left = left;
+    this.right = right;
+  }
 
   public DiffResult<T> getDiff() {
 
